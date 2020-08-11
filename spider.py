@@ -7,9 +7,6 @@ class MainSpider(scrapy.Spider):
     allowed_domains = ['soundcloud.com']
     start_urls = ['']
 
-    def __init__(self, profile="you"):
-        self.start_urls[0] = 'https://soundcloud.com/' + (str(profile).lower().replace(' ', '-')) + '/sets/'
-
     @staticmethod
     def parse_playlist(response):
         songs = {}
